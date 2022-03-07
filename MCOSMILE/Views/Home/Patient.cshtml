@@ -1,0 +1,183 @@
+﻿@{
+    ViewBag.Title = "Patient";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        table tr:not(:first-child) {
+            cursor: pointer;
+            transition: all .25s ease-in-out;
+        }
+
+            table tr:not(:first-child):hover {
+                background-color: #ddd;
+            }
+    </style>
+
+</head>
+<body>
+
+    <header id="Ser">
+        <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+        <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+        <div class="w3-container">
+            <h1><b>Patient Record</b></h1>
+           
+
+    </header>
+
+    Patient ID : <input type="text" name="pid" id="pid"><br><br>
+    First Name:<input type="text" name="fname" id="fname"><br><br>
+    Last Name:<input type="text" name="lname" id="lname"><br><br>
+    Age:<input type="text" name="age" id="age"><br><br>
+
+    <button onclick="addHtmlTableRow();">Add</button>
+    <button onclick="editHtmlTbleSelectedRow();">Update</button>
+    <button onclick="removeSelectedRow();">Remove</button>
+
+    <br />
+    <br />
+
+    <div class="tab tab-1">
+        <table id="table" border="1">
+            <tr>
+                <th>Patient ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+            </tr>
+            <tr>
+                <th>6666</th>
+                <td>Bryan</td>
+                <td>Dela Cruz</td>
+                <td>19</td>
+            </tr>
+            <tr>
+                <th>9696</th>
+                <td>Reymond</td>
+                <td>Baltazar</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <th>6969</th>
+                <td>Jose Miguel</td>
+                <td>Dela Cruz</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <th>0000</th>
+                <td>Alwin</td>
+                <td>Briones</td>
+                <td>12</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+    <script>
+
+        var rIndex,
+            table = document.getElementById("table");
+
+        // check the empty input
+        function checkEmptyInput() {
+            var isEmpty = false,
+                pid = document.getElementById("pid").value,
+                fname = document.getElementById("fname").value,
+                lname = document.getElementById("lname").value,
+                age = document.getElementById("age").value;
+
+            if (pid === "") {
+                alert("Patient ID Cannot Be Empty");
+                isEmpty = true;
+            }
+            else if (fname === "") {
+                alert("First Name Cannot Be Empty");
+                isEmpty = true;
+            }
+            else if (lname === "") {
+                alert("Last Name Cannot Be Empty");
+                isEmpty = true;
+            }
+            else if (age === "") {
+                alert("Age Cannot Be Empty");
+                isEmpty = true;
+            }
+            return isEmpty;
+        }
+
+        // add Row
+        function addHtmlTableRow() {
+            // get the table by id
+            // create a new row and cells
+            // get value from input text
+            // set the values into row cell's
+            if (!checkEmptyInput()) {
+                var newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+                    cell3 = newRow.insertCell(2),
+                    cell4 = newRow.insertCell(3),
+                    pid = document.getElementById("pid").value,
+                    fname = document.getElementById("fname").value,
+                    lname = document.getElementById("lname").value,
+                    age = document.getElementById("age").value;
+
+                cell1.innerHTML = pid;
+                cell2.innerHTML = fname;
+                cell3.innerHTML = lname;
+                cell4.innerHTML = age;
+                // call the function to set the event to the new row
+                selectedRowToInput();
+            }
+        }
+
+        // display selected row data into input text
+        function selectedRowToInput() {
+
+            for (var i = 1; i < table.rows.length; i++) {
+                table.rows[i].onclick = function () {
+                    // get the seected row index
+                    rIndex = this.rowIndex;
+                    document.getElementById("pid").value = this.cells[0].innerHTML;
+                    document.getElementById("fname").value = this.cells[2].innerHTML;
+                    document.getElementById("lname").value = this.cells[3].innerHTML;
+                    document.getElementById("age").value = this.cells[4].innerHTML;
+                };
+            }
+        }
+        selectedRowToInput();
+
+        function editHtmlTbleSelectedRow() {
+            var pid = document.getElementById("pid").value,
+                fname = document.getElementById("fname").value,
+                lname = document.getElementById("lname").value,
+                age = document.getElementById("age").value;
+            if (!checkEmptyInput()) {
+                table.rows[rIndex].cells[0].innerHTML = pid;
+                table.rows[rIndex].cells[1].innerHTML = fname;
+                table.rows[rIndex].cells[2].innerHTML = lname;
+                table.rows[rIndex].cells[3].innerHTML = age;
+            }
+        }
+
+        function removeSelectedRow() {
+            table.deleteRow(rIndex);
+            // clear input text
+            document.getElementById("pid").value = "";
+            document.getElementById("fname").value = "";
+            document.getElementById("lname").value = "";
+            document.getElementById("age").value = "";
+        }
+    </script>
+
+</body>
+</html>

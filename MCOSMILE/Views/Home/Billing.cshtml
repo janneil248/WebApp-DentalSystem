@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "Billing";
+}
+
+<div class="container">
+
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <!-- Header -->
+    <header id="Ser">
+        <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+        <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+        <div class="w3-container">
+            <h1><b>Billing</b></h1>
+            <p>
+                Here are our different means of purchase for our different products and services for your convenience
+            </p>
+
+    </header>
+</div>
+<BR /><BR />
+
+<!-- First Photo Grid-->
+<div class="w3-row-padding">
+    <center>
+        <div class="w3-third w3-container w3-margin-bottom">
+            <img src="../images/Credit.png" alt="CreditCard" style="width:50%" class="w3-hover-opacity">
+            <div class="w3-container w3-white">
+                <p><br />
+                <p><b>Credit Cards</b></p>
+                <p>
+                    MasterCard<br />
+                    Visa
+                </p>
+            </div>
+        </div>
+        <div class="w3-third w3-container w3-margin-bottom">
+            <p><br />
+            <p><br />
+            <p>
+                <br />
+                <img src="../images/paypal.png" alt="PayPal" style="width:50%" class="w3-hover-opacity">
+                <div class="w3-container w3-white">
+            <p><br />
+            <p><br />
+
+            <p><b>PayPal</b></p>
+            <p>
+                PayPal is a service that enables you to pay, send money, and accept payments.<br />
+                Register your credit card or debit card with your PayPal account.<br />
+                You can pay by simply choosing PayPal at checkout
+            </p>
+        </div>
+</div>
+<div class="w3-third w3-container">
+    <img src="../images/Cash.png" alt="Cash" style="width:40%" class="w3-hover-opacity">
+    <div class="w3-container w3-white">
+        <p><b> @Html.ActionLink("Cash On Hand", "Cash", "Home")</b></p>
+        <p>
+            You can pay at our store front<br />
+            Just go to our receptions area<br />
+        </p>
+    </div>
+</div>
+  </div>
+
+
+</div>

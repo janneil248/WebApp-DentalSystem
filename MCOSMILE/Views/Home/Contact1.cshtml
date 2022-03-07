@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_PatientLayout.cshtml";
+}
+<h2></h2>
+<h3>@ViewBag.Message</h3>
+
+<address>
+    CCS -  BSCS 2 - SMILE<br />
+    ANGELES UNIVERSITY FOUNDATION<br />
+    Phone : 248.***.****
+</address>
+
+<form action="/action_page.php" target="_blank">
+    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+        <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+        </div>
+        <div class="w3-half">
+            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+        </div>
+    </div>
+    <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+    <button class="w3-button w3-black w3-right w3-section">
+        <i class="fa fa-paper-plane"></i>SEND MESSAGE
+    </button>
+    <br />
+    <br />
+    <br />
+    <address>
+        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>
+  
+
+</form>

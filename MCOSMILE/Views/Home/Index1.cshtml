@@ -1,0 +1,248 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_PatientLayout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<title></title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* First image (Logo. Full height) */
+.bgimg-1 {
+  background-image: url('../images/bg1.png');
+  min-height: 100%;
+}
+
+/* Second image (Portfolio) */
+.bgimg-2 {
+  background-image: url("../images/bg1.png");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("../images/bg1.png");
+  min-height: 400px;
+}
+
+.w3-wide {letter-spacing: 10px;}
+.w3-hover-opacity {cursor: pointer;}
+
+/* Turn off parallax scrolling for tablets and phones */
+
+  .bgimg-1, .bgimg-2, .bgimg-3 {
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+
+</style>
+<body>
+
+    <!-- Navbar (sit on top) -->
+ 
+
+    <!-- First Parallax Image with Logo Text -->
+    <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+        <div class="w3-display-middle" style="white-space:nowrap;">
+            <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">SMILE DENTAL HEALTHCARE</span>
+        </div>
+    </div>
+
+    <!-- Container (About Section) -->
+    <div class="w3-content w3-container w3-padding-64" id="about">
+        <h2 class="w3-center">ABOUT US</h2>
+        <p class="w3-center">
+            <b>Being experts means continuous learning and high-level performing, our staff and doctors attend conferences and provide public research papers focusing on quality and innovation to find sustainable new solutions. We uncompromise on the maximum benefits to our patient with a holistic and long term outlook and provide a warm, comfortable and friendly atmosphere for our patients and staff members.</b>
+        </p>
+        <p class="w3-center">
+            <b>TRUST</b>
+        </p>
+        <p class="w3-center">
+            Uncompromising on the maximum benefits to our patient with a holistic and long term outlook.
+        </p>
+        <p class="w3-center">
+            <b>GROWTH AND EXPERTISE</b>
+        </p>
+        <p class="w3-center">
+            Being experts means continuous learning and high-level performing. Our staff and doctors attend conferences and provide public research papers focusing on quality and innovation to find sustainable new solutions.
+        </p>
+        <p class="w3-center">
+            <b>CARE</b>
+        </p>
+        <p class="w3-center">
+            Providing a warm, comfortable and friendly atmosphere for our patients and staff members.
+        </p>
+        <br /><br />
+        <div class="w3-row">
+            <div class="w3-col m6 w3-center w3-padding-large">
+                <img src="../images/den1.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" width="500" height="400">
+            </div>
+
+            <!-- Hide this text on small devices -->
+            <div class="w3-col m6 w3-hide-small w3-padding-large">
+
+                <center>
+
+                    <p>
+                        Smile Dental Healthcare is the largest pioneering dental chain in the Philippines, known for our unparalleled dental expertise, excellent patient care services and state-of-the art facilities.
+                    </p>
+
+                    <p>
+                        ISO 9001: 2008 Certified
+                    </p>
+
+                    <p>   Aiming to be a world-class dental center based in the Philippines, the management system of Smile Dental Healthcare main office and 100 clinic have been assessed and certified to meet the requirements of ISO 9001: 2008. </p>
+                </center>
+
+            </div>
+        </div>
+        <br /><br />
+        <h2 class="w3-center">OUR MISSION</h2>
+        <p class="w3-center"><em>At Smile Dental Healthcare, it is our topmost priority to provide the highest quality of dental services to all our patients with compassion and dignity at the most affordable cost to our customers..</em></p><br /><br />
+        <h2 class="w3-center">OUR VISION</h2>
+        <p class="w3-center"><em>Smile Dental Healthcare’s vision is to be the choice for Philippines’ leading centre of excellence in the field of dentistry. Not only do we provide the highest quality dental services, we also instill in us our very own values.</em></p><br /><br />
+
+        <div class="w3-row">
+            <div class="w3-col m6 w3-center w3-padding-large">
+                <br /> <br />
+                <img src="../images/den2.jpg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" width="500" height="400">
+            </div>
+
+            <!-- Hide this text on small devices -->
+            <div class="w3-col m6 w3-hide-small w3-padding-large">
+
+                <h2 class="w3-center">OUR VALUES</h2>
+                <p class="w3-center">
+                    <em>
+                        <b>Passion for Work</b>. We believe that to succeed, we have to truly love what we do. We are passionate about our work, our customers, our goals and our company.
+                    </em>
+                </p>
+                <p class="w3-center">
+                    <em>
+                        <b>Determination to Succeed</b>. We are determined to succeed in everything we do by performing our work to the best of our abilities and consistently achieving our goals.
+                    </em>
+                </p>
+                <p class="w3-center">
+                    <em>
+                        <b>Commitment to Excellence</b>. We believe in promoting a culture of excellence. We are committed to be the best in our profession as dental care professionals through the pursuit of continuing education, training and experience.
+                    </em>
+                </p>
+            </div>
+        </div><br /><br /><br />
+        <h2 class="w3-center">OUR COSTUMERS</h2>
+        <p class="w3-center">
+            <em>
+                Our ability to satisfy and exceed our customers’ needs and expectations is the foundation of our business.
+            </em>
+        </p>
+        <p class="w3-center">
+            <em>
+                We provide accurate solutions and deliver only the highest quality dental services to our customers.
+            </em>
+        </p>
+        <p class="w3-center">
+            <em>
+                We provide consistent and quality customer service in every aspect of our operations.
+            </em>
+        </p>
+        <p class="w3-center">
+            <em>
+                We establish long lasting business relationships based on quality, performance and integrity with our customers.
+            </em>
+        </p>
+        <br /><br /><br /><br /><br /><br />
+
+        <p class="w3-large w3-center w3-padding-16">SMILE RATING REVIEWS</p>
+        <p class="w3-wide">COSMETIC DENTISTRY</p>
+        <div class="w3-light-grey">
+            <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:100%">100%</div>
+        </div>
+        <p class="w3-wide">GENERAL SERVICES</p>
+        <div class="w3-light-grey">
+            <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:95%">95%</div>
+        </div>
+        <p class="w3-wide">PEDIATRIC SERVICES</p>
+        <div class="w3-light-grey">
+            <div class="w3-container w3-padding-small w3-dark-grey w3-center" style="width:95%">95%</div>
+        </div>
+    </div>
+
+
+            <!-- Modal for full size images on click-->
+            <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+                <span class="w3-button w3-large w3-black w3-display-topright" title="Close Modal Image"><i class="fa fa-remove"></i></span>
+                <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+                    <img id="img01" class="w3-image">
+                    <p id="caption" class="w3-opacity w3-large"></p>
+                </div>
+            </div>
+
+            <!-- Third Parallax Image with Portfolio Text -->
+            <!-- Container (Contact Section) -->
+            <!-- Footer -->
+            <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+                <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+                <div class="w3-xlarge w3-section">
+                    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+                    <i class="fa fa-instagram w3-hover-opacity"></i>
+                    <i class="fa fa-snapchat w3-hover-opacity"></i>
+                    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+                    <i class="fa fa-twitter w3-hover-opacity"></i>
+                    <i class="fa fa-linkedin w3-hover-opacity"></i>
+                </div>
+
+            </footer>
+
+            <script>
+                // Modal Image Gallery
+                function onClick(element) {
+                    document.getElementById("img01").src = element.src;
+                    document.getElementById("modal01").style.display = "block";
+                    var captionText = document.getElementById("caption");
+                    captionText.innerHTML = element.alt;
+                }
+
+                // Change style of navbar on scroll
+                window.onscroll = function () { myFunction() };
+                function myFunction() {
+                    var navbar = document.getElementById("myNavbar");
+                    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+                    } else {
+                        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+                    }
+                }
+
+                // Used to toggle the menu on small screens when clicking on the menu button
+                function toggleFunction() {
+                    var x = document.getElementById("navDemo");
+                    if (x.className.indexOf("w3-show") == -1) {
+                        x.className += " w3-show";
+                    } else {
+                        x.className = x.className.replace(" w3-show", "");
+                    }
+                }
+            </script>
+
+</body>
+</html>

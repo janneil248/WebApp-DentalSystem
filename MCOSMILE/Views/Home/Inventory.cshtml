@@ -1,0 +1,182 @@
+﻿@{
+    ViewBag.Title = "Inventory";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        table tr:not(:first-child) {
+            cursor: pointer;
+            transition: all .25s ease-in-out;
+        }
+
+            table tr:not(:first-child):hover {
+                background-color: #ddd;
+            }
+    </style>
+
+</head>
+
+<body>
+    <header id="Ser">
+        <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+        <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+        <div class="w3-container">
+            <h1><b>Inventory</b></h1>
+
+
+    </header>
+    Serial # : <input type="text" name="sim" id="sim"><br><br>
+    Item Name:<input type="text" name="iname" id="iname"><br><br>
+    Category:<input type="text" name="cat" id="cat"><br><br>
+    Quantity:<input type="text" name="quan" id="quan"><br><br>
+
+    <button onclick="addHtmlTableRow();">Add</button>
+    <button onclick="editHtmlTbleSelectedRow();">Update</button>
+    <button onclick="removeSelectedRow();">Remove</button>
+
+    <br />
+    <br />
+
+    <div class="tab tab-1">
+        <table id="table" border="1">
+            <tr>
+                <th>Serial #</th>
+                <th>Item Name</th>
+                <th>Category</th>
+                <th>Quantity</th>
+            </tr>
+            <tr>
+                <th>4564</th>
+                <td>Surgical Mask</td>
+                <td>Medical Supplies</td>
+                <td>500</td>
+            </tr>
+            <tr>
+                <th>1565</th>
+                <td>Teeth Bleaching</td>
+                <td>Medical Supplies</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <th>6594</th>
+                <td>Dental Mirror</td>
+                <td>Medical Tools</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <th>3354</th>
+                <td>Endo Motor</td>
+                <td>Medical Tools</td>
+                <td>1</td>
+            </tr>
+        </table>
+    </div>
+
+
+
+
+    <script>
+
+        var rIndex,
+            table = document.getElementById("table");
+
+        // check the empty input
+        function checkEmptyInput() {
+            var isEmpty = false,
+                sim = document.getElementById("sim").value,
+                iname = document.getElementById("iname").value,
+                cat = document.getElementById("cat").value,
+                quan = document.getElementById("quan").value;
+
+            if (sim === "") {
+                alert("Serial # Cannot Be Empty");
+                isEmpty = true;
+            }
+            else if (iname === "") {
+                alert("Item Name Cannot Be Empty");
+                isEmpty = true;
+            }
+            else if (cat === "") {
+                alert("Category Cannot Be Empty");
+                isEmpty = true;
+            }
+            else if (quan === "") {
+                alert("Quantity Cannot Be Empty");
+                isEmpty = true;
+            }
+            return isEmpty;
+        }
+
+        // add Row
+        function addHtmlTableRow() {
+            // get the table by id
+            // create a new row and cells
+            // get value from input text
+            // set the values into row cell's
+            if (!checkEmptyInput()) {
+                var newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+                    cell3 = newRow.insertCell(2),
+                    cell4 = newRow.insertCell(3),
+                    sim = document.getElementById("sim").value,
+                    iname = document.getElementById("iname").value,
+                    cat = document.getElementById("cat").value,
+                    quan = document.getElementById("quan").value;
+
+                cell1.innerHTML = sim;
+                cell2.innerHTML = iname;
+                cell3.innerHTML = cat;
+                cell4.innerHTML = quan;
+                // call the function to set the event to the new row
+                selectedRowToInput();
+            }
+        }
+
+        // display selected row data into input text
+        function selectedRowToInput() {
+
+            for (var i = 1; i < table.rows.length; i++) {
+                table.rows[i].onclick = function () {
+                    // get the seected row index
+                    rIndex = this.rowIndex;
+                    document.getElementById("sim").value = this.cells[0].innerHTML;
+                    document.getElementById("iname").value = this.cells[2].innerHTML;
+                    document.getElementById("cat").value = this.cells[3].innerHTML;
+                    document.getElementById("quan").value = this.cells[4].innerHTML;
+                };
+            }
+        }
+        selectedRowToInput();
+
+        function editHtmlTbleSelectedRow() {
+            var sim = document.getElementById("sim").value,
+                iname = document.getElementById("iname").value,
+                cat = document.getElementById("cat").value,
+                quan = document.getElementById("quan").value;
+            if (!checkEmptyInput()) {
+                table.rows[rIndex].cells[0].innerHTML = sim;
+                table.rows[rIndex].cells[1].innerHTML = iname;
+                table.rows[rIndex].cells[2].innerHTML = cat;
+                table.rows[rIndex].cells[3].innerHTML = quan;
+            }
+        }
+
+        function removeSelectedRow() {
+            table.deleteRow(rIndex);
+            // clear input text
+            document.getElementById("sim").value = "";
+            document.getElementById("iname").value = "";
+            document.getElementById("cat").value = "";
+            document.getElementById("quan").value = "";
+        }
+    </script>
+
+</body>
+</html>

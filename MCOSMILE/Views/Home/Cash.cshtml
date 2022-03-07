@@ -1,0 +1,74 @@
+﻿@{
+    ViewBag.Title = "Cash";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        table tr:not(:first-child) {
+            cursor: pointer;
+            transition: all .25s ease-in-out;
+        }
+
+            table tr:not(:first-child):hover {
+                background-color: #ddd;
+            }
+    </style>
+
+
+
+    <script>
+
+
+        function add() {
+        
+            var extra = parseInt(document.getElementById("extra").value);
+            var serv = parseInt(document.getElementById("serv").value);
+           
+            document.getElementById("amount").value =  extra+serv ;
+
+
+        }
+        function Calculate() {
+
+
+            var amount = parseInt(document.getElementById("amount").value);
+            var payment = parseInt(document.getElementById("payment").value);
+            document.getElementById("change").value = payment-amount;
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <header id="Ser">
+        <a href="#"><img src="/w3images/avatar_g2.jpg" style="width:65px;" class="w3-circle w3-right w3-margin w3-hide-large w3-hover-opacity"></a>
+        <span class="w3-button w3-hide-large w3-xxlarge w3-hover-text-grey" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+        <div class="w3-container">
+            <h1><b>Cash on hand</b></h1>
+
+
+    </header>
+    <pre>
+    Receipt # :             <input type="text" name="sim" id="rec"><br>
+    Services Cost:          <input onchange="add();" type="text" name="serv" id="serv"><br>
+    Extra Charges:          <input onchange="add();" type="text" name="extra" id="extra"><br>
+    Total Amount:           <input type="text" name="amount" id="amount"><br>
+    Payment:                <input type="text" name="payment" id="payment"><br>
+    Change:                 <input type="text" name="change" id="change"><br>
+
+    <button onclick="Calculate();">Calculate</button> <button onclick=";">Print Receipt</button>
+
+    </pre>
+
+
+
+
+</body>
+</html>
